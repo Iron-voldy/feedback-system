@@ -1,0 +1,112 @@
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --card:#111827; /* gray-900 */
+  --muted:#94a3b8; /* slate-400 */
+  --text:#e5e7eb; /* gray-200 */
+  --accent:#6366f1; /* indigo-500 */
+  --accent-2:#22c55e; /* green-500 */
+  --danger:#ef4444; /* red-500 */
+  --warn:#f59e0b; /* amber-500 */
+  --border:#1f2937; /* gray-800 */
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#0b1222 0%, #0f172a 100%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+header{position:sticky;top:0;z-index:5;background:rgba(15,23,42,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+h1{font-size:clamp(20px,2.2vw,28px);margin:0;letter-spacing:.3px}
+.grid{display:grid;gap:16px}
+@media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.card h2{font-size:18px;margin:0 0 8px 0}
+.card .body{padding:18px}
+.muted{color:var(--muted)}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;background:#0b1020;border:1px solid var(--border);color:var(--text);padding:12px 12px;border-radius:12px;outline:none}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{appearance:none;border:none;border-radius:12px;padding:12px 14px;font-weight:600;cursor:pointer}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.success{background:var(--accent-2);color:#06110a}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;border-bottom:1px solid var(--border);padding:0 18px}
+.tab{padding:10px 14px;border-radius:10px 10px 0 0;border:1px solid transparent;color:var(--muted);cursor:pointer;font-weight:600}
+.tab.active{color:white;border-color:var(--border);background:#0b1222}
+
+/* Table */
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;font-size:14px}
+th{color:#aab4c3;font-weight:600}
+tr:hover td{background:#0b1222}
+.pill{font-size:12px;font-weight:700;padding:4px 8px;border-radius:999px;display:inline-block}
+.pill.open{background:rgba(99,102,241,.15);color:#c7c9ff}
+.pill.progress{background:rgba(245,158,11,.16);color:#ffdd9a}
+.pill.done{background:rgba(34,197,94,.18);color:#bbf7d0}
+
+/* KPI cards */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{padding:16px;border:1px solid var(--border);border-radius:14px;background:#0b1222}
+.kpi h3{margin:0;font-size:12px;color:var(--muted)}
+.kpi p{margin:6px 0 0 0;font-size:22px;font-weight:800}
+
+/* Stars */
+.stars{display:flex;gap:6px}
+.star{width:28px;height:28px;cursor:pointer;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+
+/* Footer note */
+.note{font-size:12px;color:var(--muted);padding:6px 18px}
+.stack{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Success/Error Messages */
+.alert {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+.alert.success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #bbf7d0;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.alert.error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fecaca;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--muted);
+}
+.breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Form validation */
+.form-error {
+    color: var(--danger);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Loading states */
+.btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.btn.loading::after {
+    content: "...";
+}
